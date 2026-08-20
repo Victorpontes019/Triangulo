@@ -1,0 +1,68 @@
+package triangulo;
+import java.util.Random;
+import java.util.Scanner;
+
+public class AngulosInternos {
+    
+    int lado1;
+    int lado2;
+    int lado3;
+    
+    public int getLado1(){
+     return lado1;   
+    }
+    
+    public int getLado2(){
+     return lado2;   
+    }
+        
+    public int getLado3(){
+     return lado3;   
+    }
+    
+    public void setLado1(int parametro){
+     lado1 = parametro;
+    }
+    
+    public void setLado2(int parametro){
+     lado2 = parametro;
+    }
+    
+    public void setLado3(int parametro){
+     lado3 = parametro;
+    }
+    
+    public static void main(String[] args){
+        
+        int valor;
+        int soma;
+        
+        Scanner scan = new Scanner(System.in);
+        Random random = new Random();
+        AngulosInternos triangulo = new AngulosInternos();
+        
+        triangulo.lado1 = random.nextInt(40);
+        triangulo.lado2 = random.nextInt(40);
+        
+        System.out.println("SABENDO QUE A SOMA DE TODOS OS LADOS INTERNOS DE UM TRIANGULO E 180");
+        System.out.println("ACHE O VALOR DO LADO 3");
+        
+        System.out.println("LADO 1: " + triangulo.lado1);
+        System.out.println("LADO 2: " + triangulo.lado2);
+        
+        System.out.print("\n DIGITE O LADO 3: ");
+        valor = scan.nextInt();
+        
+        if(valor + triangulo.lado1 + triangulo.lado2 == 180){
+            
+            triangulo.lado3 = valor;
+            System.out.println("\nACERTOU!!");
+            System.out.printf("A SOMA DE %d + %d + %d E 180!!", triangulo.lado1, triangulo.lado2, triangulo.lado3);
+        }
+        
+        else{
+            soma = triangulo.lado1 + triangulo.lado2 + valor;
+            System.out.printf("\nERROU, A SOMA DE %d + %d + %d E %d\n", triangulo.lado1, triangulo.lado2, valor, soma);
+        }
+    }
+}
